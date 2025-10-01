@@ -478,24 +478,33 @@ export function RegistrationForm() {
               <Label htmlFor="position" className="text-base font-semibold flex items-center gap-2">
                 Cargo *{focusedField === "position" && <Sparkles className="w-4 h-4 text-accent animate-pulse" />}
               </Label>
-              <Input
-                id="position"
+              <Select
                 name="position"
-                type="text"
-                required
                 value={formData.position}
-                onChange={handleChange}
-                onFocus={() => setFocusedField("position")}
-                onBlur={() => setFocusedField(null)}
-                className="h-14 text-base border-2 focus:border-accent transition-all duration-300"
-                placeholder="Seu cargo na empresa"
+                onValueChange={(value) => handleSelectChange("position", value)}
+                required
                 disabled={loading}
-              />
+              >
+                <SelectTrigger className="h-14 text-base border-2 focus:border-accent transition-all duration-300">
+                  <SelectValue placeholder="Selecione seu cargo" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Proprietário/Sócio">Proprietário/Sócio</SelectItem>
+                  <SelectItem value="Diretor">Diretor</SelectItem>
+                  <SelectItem value="Gerente">Gerente</SelectItem>
+                  <SelectItem value="Contador">Contador</SelectItem>
+                  <SelectItem value="Analista Fiscal">Analista Fiscal</SelectItem>
+                  <SelectItem value="Consultor">Consultor</SelectItem>
+                  <SelectItem value="Advogado">Advogado</SelectItem>
+                  <SelectItem value="Empresário">Empresário</SelectItem>
+                  <SelectItem value="Outro">Outro</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="space-y-3">
               <Label htmlFor="companySize" className="text-base font-semibold">
-                Porte da Empresa *
+                Regime Tributário *
               </Label>
               <Select
                 name="companySize"
@@ -505,14 +514,14 @@ export function RegistrationForm() {
                 disabled={loading}
               >
                 <SelectTrigger className="h-14 text-base border-2 focus:border-accent transition-all duration-300">
-                  <SelectValue placeholder="Selecione o porte da empresa" />
+                  <SelectValue placeholder="Selecione o regime tributário" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="MEI">MEI (Microempreendedor Individual)</SelectItem>
-                  <SelectItem value="Microempresa">Microempresa</SelectItem>
-                  <SelectItem value="Pequena">Pequena Empresa</SelectItem>
-                  <SelectItem value="Média">Média Empresa</SelectItem>
-                  <SelectItem value="Grande">Grande Empresa</SelectItem>
+                  <SelectItem value="Simples Nacional">Simples Nacional</SelectItem>
+                  <SelectItem value="Lucro Presumido">Lucro Presumido</SelectItem>
+                  <SelectItem value="Lucro Real">Lucro Real</SelectItem>
+                  <SelectItem value="Não sei">Não sei</SelectItem>
                 </SelectContent>
               </Select>
             </div>
