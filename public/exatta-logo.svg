@@ -1,0 +1,18 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo da Exatta baseada na imagem fornecida -->
+  <g transform="translate(50, 50)">
+    <!-- Estrela vermelha -->
+    <g fill="#bf0202">
+      <!-- Pontas superiores -->
+      <polygon points="150,0 180,60 150,80 120,60"/>
+      <!-- Pontas laterais direitas -->
+      <polygon points="220,70 280,70 260,100 220,100"/>
+      <!-- Pontas inferiores -->
+      <polygon points="150,120 180,180 150,200 120,180"/>
+      <!-- Pontas laterais esquerdas -->
+      <polygon points="80,70 140,70 120,100 80,100"/>
+      <!-- Centro da estrela -->
+      <polygon points="120,60 180,60 220,70 220,100 180,110 120,110 80,100 80,70"/>
+    </g>
+  </g>
+</svg>
